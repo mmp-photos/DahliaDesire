@@ -1,11 +1,12 @@
 import { useState, useRef } from 'react';
 
-const PrimaryText = () => {
-    const [ name, setName ] = useState('Desire');
-
+const PrimaryText = ({name, bio}) => {
     return(
-        <h1>{name}</h1>
+        <>
+            <h1>{name} Desire</h1>
+            <p>{bio}</p>
+        </>
     )
-}
+};
 
-export default PrimaryText
+export default PrimaryText;

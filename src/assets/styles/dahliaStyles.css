@@ -1,69 +1,83 @@
 :root {
-    --background-color: purple
-}
-.cat{
-    --background-color: grey;
-}
-.dog{
-    --background-color: chocolate;
-}
-body{
+    --background-color: purple;
+    --text-color: black;
+ }
+ .dahlia{
+    --background-color: crimson;
+    --text-color: black;
+ }
+ .daddy{
+    --background-color: black;
+    --text-color: white;
+ }
+/* SEMANTIC STYLES */
+ body{
     background-color: var(--background-color);
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 2.5rem;
+    color: var(--text-color)
+ }
+ h1{
+    color: var(--text-color);
+ }
+/* STRUCTURAL STYLES */
+ #dahlia{
+    height: 100%;
+    object-fit: cover;
+    object-position: 0%;
+ }
+ #daddy{
+   aspect-ratio: 1 / 1;
+   width: 100%;
+   content: "";
+   background-image: url("images/daddy.jpeg");
+   background-size: contain;
 }
-#cat{
-    object-fit: none;
-    object-position: 0px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 600px;
-    /* transition: width 2s; */
-    z-index: 2;
-}
-/* #cat::after{
-    top: 0; right: 0; bottom: 0; left: 0;
-    z-index: 1;
-}
-#cat:hover {
-    width: 800px;
-} */
-#dog{
-    object-fit: none;
-    object-position: 0px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 900px;
-    height: 600px;
-    z-index: 1;
-}
-#buttons{
+ #buttons{
     display: block;
     position: absolute;
+    width: 400px;
     top: 650px;
     left: 100px;
-}
-button{
-    background-color: white;
-}
-#divider{
-    display: block;
-    width: 20px;
-    height: 600px;
-    background-color: limegreen;
-    z-index: 4;
-    top: 0px;
-    left: 385px;
-}
-  
-  .editPoint__left {
+ }  
+ .editPoint__left {
+    position: relative;
     width: 35px;
     height: 35px;
+    position: absolute;
     top: 300px;
     background: white;
     border: 2px solid blue;
     border-radius: 999px;
     cursor: pointer;
-    z-index: 7;
-  }  
-  
+    z-index: 12;
+ }   
+ .editPoint__left::after {
+    position: absolute;
+    content: "";
+    display: none;
+    width: 35px;
+    height: 200px;
+    background-color: white;
+    transform: 50%;
+    z-index: -1;
+ }
+
+ .editPoint__left::before {
+    position: absolute;
+    content: "";
+    display: none;
+    width: 35px;
+    height: 200px;
+    background-color: white;
+ }
+/* UTILITY STYLES */
+ .hidden {
+   display: none;
+ }
+ .show {
+   display: block;
+ }
+ .white {
+    color: white;
+ }
