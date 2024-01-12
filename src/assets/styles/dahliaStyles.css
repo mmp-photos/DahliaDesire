@@ -1,30 +1,88 @@
 :root {
     --background-color: purple;
+    --contrasting-color: rgb(255, 253, 107);
     --text-color: black;
+    --transition-delay: 0s;
+    --design-font: sans-serif;
+    --design-font-weight: 400;
+    --design-font-size: 2.5rem;
  }
  .dahlia{
     --background-color: crimson;
+    --contrasting-color: black;
     --text-color: black;
+    --transition-delay: 1s;
+    --design-font: "dalliance-script-display", sans-serif;;
+    --design-font-weight: 400;
+    --design-font-size: 3.5rem;
+
  }
  .daddy{
     --background-color: black;
+    --contrasting-color: white;
     --text-color: white;
+    --transition-delay: 1s;
+    --design-font: "clarendon-wide-sketch", sans-serif;
+    --design-font-weight: 700;
+    --design-font-size: 2.5rem;
  }
 /* SEMANTIC STYLES */
  body{
     background-color: var(--background-color);
     font-family: 'Times New Roman', Times, serif;
     padding-top: 2.5rem;
-    color: var(--text-color)
+    color: var(--text-color);
+    transition-delay: var(--transition-delay);
+    transition: all 0.5s ease-in-out;
  }
  h1{
     color: var(--text-color);
+    font-family: var(--design-font);
+    font-weight: var(--design-font-weight);
+ }
+ h3{
+   color: var(--text-color);
+   font-family: var(--design-font);
+   font-weight: var(--design-font-weight);
+   font-size: 1.25rem;
+ }
+ header{
+   position: sticky;
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+ }
+ header > h1 {
+   display: inline;
+   font-family: var(--design-font);
+   font-size: var(--design-font-size);
+   font-weight: var(--design-font-weight);
+ }
+ nav {
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: .5rem;
+ }
+ nav > ul {
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+ }
+ nav > ul > li {
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 1.75rem;
+   text-decoration: none;
  }
 /* STRUCTURAL STYLES */
  #dahlia{
     height: 100%;
     object-fit: cover;
     object-position: 0%;
+    display: inline;
+    margin-right: 0px;
  }
  #daddy{
    aspect-ratio: 1 / 1;
@@ -32,6 +90,11 @@
    content: "";
    background-image: url("images/daddy.jpeg");
    background-size: contain;
+   overflow: hidden;
+   border-style: solid;
+   border-width: 4px;
+   border-radius: 50%;
+   border-color: var(--contrasting-color);
 }
  #buttons{
     display: block;
@@ -41,37 +104,49 @@
     left: 100px;
  }  
  .editPoint__left {
-    position: relative;
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    top: 300px;
-    background: white;
-    border: 2px solid blue;
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    background-color: rgba(255, 255, 255, .75);;
+    background-image: url(images/flower_logo.svg);
+    background-size: contain;
+    border: 2px solid purple;
     border-radius: 999px;
     cursor: pointer;
     z-index: 12;
- }   
- .editPoint__left::after {
-    position: absolute;
-    content: "";
-    display: none;
-    width: 35px;
-    height: 200px;
-    background-color: white;
-    transform: 50%;
-    z-index: -1;
+    transform: translateY(12.5rem);
+    margin-left: -38px;
+    margin-right: auto;
+    margin-bottom: -34px;
  }
-
  .editPoint__left::before {
-    position: absolute;
-    content: "";
-    display: none;
-    width: 35px;
-    height: 200px;
-    background-color: white;
+   display: block;
+   content: "p";
+   font-family: "dalliance-flourishes", sans-serif;
+   font-size: 3rem;
+   font-weight: 400;
+   color: white;
+   transform: translate(-95px, 10px);
+ } 
+ .editPoint__left::after {
+   display: block;
+   content: "p";
+   font-family: "dalliance-flourishes", sans-serif;
+   font-size: 3rem;
+   font-weight: 400;
+   margin-left: 125px;
+   transform:rotateY(180deg) translate(-40px, -58px);
+   color: white;
+}   
+ .primary-logo {
+   width: 5.5rem;
+   display: inline;
+   margin-right: 6px;
  }
 /* UTILITY STYLES */
+ .footer {
+   margin-top: 1.5rem;
+ }
  .hidden {
    display: none;
  }

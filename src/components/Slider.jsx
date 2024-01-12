@@ -2,29 +2,29 @@ import { useState, useRef, useEffect } from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 
 import PrimaryText from './PrimaryText.jsx'
+import Shows from './Shows.jsx'
 import dahliaPic from './../assets/images/dahlia.jpeg';
-import daddyPic from './../assets/images/daddy.jpeg';
 
 function Slider() {
 
   const dahlia = useRef();
-  const daddy = useRef();
   const slider = useRef();
 
-  const [ daddyWidth, setDaddyWidth ] = useState(0);
   const [ dahliaWidth, setDahliaWidth ] = useState(0);
   const [ sliderPosition, setSliderPosition ] = useState(0);
+  const [ name, setName ] = useState('Chose your')
+  const [ bio, setBio ] = useState('')
   
-  const refContainer = useRef();
+  const daddy = useRef();
   const [dimensions, setDimensions] = useState({
       width: 0,
       height: 0,
   });
   useEffect(() => {
-      if (refContainer.current) {
+      if (daddy.current) {
           setDimensions({
-              width: refContainer.current.offsetWidth,
-              height: refContainer.current.offsetHeight,
+              width: daddy.current.offsetWidth,
+              height: daddy.current.offsetHeight,
           });
       }
   }, []);
@@ -34,21 +34,10 @@ function Slider() {
         console.log(`dimensions were updated to ${dimensions.width}`)
         const half = dimensions.width / 2
         console.log(`Half of the width should be ${half}`)
-        setDahliaWidth(half)
+        setDahliaWidth(half + 16)
         setSliderPosition(half)
     }
   }, [dimensions]);
-
-  const half = 245;
-
-  console.log(`dimensions are ${dimensions.width} and ${dimensions.height}`)
-
-  // useEffect(() => {
-  //   const getDaddy = daddy.current.offsetWidth
-  //   setDaddyWidth(getDaddy)
-  // }, [daddy.current]);
-  // const [width, setWidth] = useState(0);
-  // const half = 235;
  
   //BUTTON FUNCTIONS//
   const showDahlia = () => {
@@ -82,22 +71,27 @@ function Slider() {
   const handleMouseDown = (e) => {
     e.preventDefault();
     const ref = slider.current;
-    const originalPosition = ref.getBoundingClientRect().x;
-    console.log(`Starting boundary is ${originalPosition}`)
+    const originalPosition = sliderPosition;
 
     const onMouseMove = (e) => {
       document.body.style.cursor = "pointer";
       console.log(e.x)
-      let difference = originalPosition - e.pageX + 25
+      let difference = originalPosition - e.pageX
       let widthChange = originalPosition - difference
       const xLeft = widthChange
       setDahliaWidth(xLeft)
-      if(xLeft > 10) {
+      console.log(`xWidth is ${xLeft} and daddy is ${dimensions.width}`)
+      if(xLeft > 0 && xLeft < dimensions.width) {
         setSliderPosition(xLeft)
-      } else {
+      } else if(xLeft <= 9) {
         setSliderPosition(0)
-        showDahlia()
+        window.removeEventListener("mousemove", onMouseMove)
+        showDaddy()
         return
+      } else if(xLeft > dimensions.width) {
+        setSliderPosition(dimensions.width)
+        window.removeEventListener("mousemove", onMouseMove)
+        showDahlia()
       }
     };
 
@@ -117,24 +111,24 @@ function Slider() {
     <Container style={{backgroundColor: "none"}}>
         <Row>
             <Col md={6}>
-                <div id="daddy" ref={refContainer}>
+                <div id="daddy" ref={daddy}>
                 <img id="dahlia" style={{width: dahliaWidth}} ref={dahlia} src={dahliaPic} alt="Dahlia" />
-                </div>
                 <div
                 ref={slider}
-                style={{marginLeft: sliderPosition}}
                 className="editPoint__left"
                 onMouseDown={(e) => handleMouseDown(e)}></div>
+                </div>
 
-                <section id="buttons">
+                {/* <section id="buttons">
                     <button onClick={showDahlia}>Dahlia</button>
                     <button onClick={showBoth}>Split</button>
                     <button onClick={showDaddy}>Daddy</button>
-                </section>
+                </section> */}
 
             </Col>
             <Col>
-                {/* <PrimaryText name={name} bio={bio} />             */}
+                <PrimaryText name={name} bio={bio} />
+                <Shows />        
             </Col>
         </Row>
     </Container>

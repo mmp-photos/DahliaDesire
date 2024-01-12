@@ -1,0 +1,19 @@
+FONTS USED
+Dalliance OT Script Display
+font-family: "dalliance-script-display", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Dalliance OT Flourishes
+font-family: "dalliance-flourishes", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+DADDY FONTS
+font-family: "clarendon-wide-sketch", sans-serif;
+font-weight: 200;
+font-style: normal;
+
+font-family: "clarendon-wide-sketch", sans-serif;
+font-weight: 700;
+font-style: normal;
