@@ -4,7 +4,6 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import PrimaryText from './components/PrimaryText.jsx'
 import Head from './components/Head.jsx'
 import Footer from './components/Footer.jsx'
-import Shows from './components/Shows.jsx'
 import dahliaPic from './assets/images/dahlia.jpeg';
 
 function App() {
@@ -13,8 +12,8 @@ function App() {
 
   const [ dahliaWidth, setDahliaWidth ] = useState(0);
   const [ sliderPosition, setSliderPosition ] = useState(0);
-  const [ name, setName ] = useState('Name Your')
-  const [ bio, setBio ] = useState('')
+  const [ name, setName ] = useState(null)
+  const [ bio, setBio ] = useState(null )
   
   const daddy = useRef();
   const [dimensions, setDimensions] = useState({
@@ -85,7 +84,6 @@ function App() {
       if(xLeft > 0 && xLeft < dimensions.width) {
         setSliderPosition(xLeft)
       } else if(xLeft <= 9) {
-        setSliderPosition(0)
         window.removeEventListener("mousemove", onMouseMove)
         showDaddy()
         return
@@ -120,22 +118,17 @@ function App() {
                 className="editPoint__left"
                 onMouseDown={(e) => handleMouseDown(e)}></div>
                 </div>
-
-                {/* <section id="buttons">
-                    <button onClick={showDahlia}>Dahlia</button>
-                    <button onClick={showBoth}>Split</button>
-                    <button onClick={showDaddy}>Daddy</button>
-                </section> */}
             </Col>
             <Col>
                 <PrimaryText name={name} bio={bio} />
-                <Shows />
-                <Button onClick={showDahlia}>Dahlia</Button>
-                <Button>Daddy</Button>
+                {!name
+                  ? <><button className="landing-page" onClick={showDahlia}><span className="dahlia-text" style={{fontSize: "3.5rem"}}>Dahlia</span></button> <span style={{fontSize: "2rem"}}> or </span><button className="landing-page" onClick={showDaddy}><span className="daddy-text">Daddy</span></button></>
+                  :null
+                }
             </Col>
           </Row>
         </Container>
-        <Footer />
+        {/* <Footer /> */}
       </>
     )
 }

@@ -18,8 +18,13 @@ const Head = ({name}) => {
             <Row>
                 <Col md={6}>
                     <header>
-                        <img className="primary-logo" src={flowerLogo} alt="Dahlia Logo" />
-                        <h1>{name} Desire</h1>
+                        {name
+                            ? <> 
+                                <img className="primary-logo" style={{cursor: "pointer"}}src={flowerLogo} alt="Dahlia Logo" onClick={() => {window.location.reload()}}/>
+                                <h1>{name} Desire</h1>
+                              </>
+                            : null
+                        }
                     </header>
                 </Col>
                 <Col>
