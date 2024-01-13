@@ -94,7 +94,7 @@
    aspect-ratio: 1 / 1;
    width: 100%;
    content: "";
-   background-image: url("images/daddy.jpeg");
+   background-image: url("https://dahliadesire.onrender.com/images/daddy.jpeg");
    background-size: contain;
    overflow: hidden;
    border-style: solid;
@@ -114,7 +114,7 @@
     width: 75px;
     height: 75px;
     background-color: rgba(255, 255, 255, .75);;
-    background-image: url(images/flower_logo.svg);
+    background-image: url("https://dahliadesire.onrender.com/images/flower_logo.svg");
     background-size: contain;
     border: 2px solid purple;
     border-radius: 999px;
