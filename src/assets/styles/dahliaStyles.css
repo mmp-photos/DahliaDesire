@@ -234,6 +234,13 @@
   font-size: var(--banner-text-size);
   padding-top: 32px;
  }
+ .booking{
+  width: 450px;
+  padding: 4rem;
+  margin: auto;
+  background-color: white;
+  border: 9px solid var(--contrasting-color);
+ }
  .primary-logo {
    display: inline-block;
    width: 6.5rem;
