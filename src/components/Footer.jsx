@@ -24,7 +24,7 @@ const Footer = ({ name, setName }) => {
     }
 
     return(
-        <footer style={{position: "absolute", bottom: "50px", width: "100%"}}>
+        <footer style={{bottom: "50px", width: "100%"}}>
             <span className="daddy-text opacity7">Folow your desires&nbsp; &nbsp;</span> 
             <button onClick={() => handleClick('https://www.facebook.com/dahlia.desire/')}><i className="fa-brands fa-facebook"></i></button>
             <button onClick={() => handleClick('https://www.instagram.com/dahlia.desire/')}><i className="fa-brands fa-instagram"></i></button>
