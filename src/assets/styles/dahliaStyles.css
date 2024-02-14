@@ -56,6 +56,9 @@
   .dahlia {
     --banner-text-size: 2.25rem;
   }
+  .daddy {
+    --h1-size: .25rem;
+  }
 }
 /* SEMANTIC STYLES */
  body{
