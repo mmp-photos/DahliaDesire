@@ -1,0 +1,111 @@
+/*DEFINE SITE VARIABLES */
+:root {
+    --background-color: purple;
+    --contrasting-color: rgb(255, 253, 107);
+    --highlight-color: rgb(255, 253, 107);
+    --gold-hightlight: #daa520;
+    --text-color: black;
+    --transition-delay: 0s;
+    --design-font: sans-serif;
+    --design-font-weight: 400;
+    --design-font-size: .75rem;
+    --daddy-font: "clarendon-wide-sketch", sans-serif;
+    --dahlia-font: "dunhill-script", sans-serif;
+    --footer-button-text: 3rem;
+    --footer-align: right;
+    --two-rem: 2rem;
+    --three-rem: 3rem;
+    --banner-text-size: 3.25rem;
+ }
+ .dahlia{
+    --background-color: crimson;
+    --contrasting-color: black;
+    --highlight-color: rgb(255, 253, 107);
+    --text-color: black;
+    --transition-delay: 1s;
+    --design-font: "dunhill-script", sans-serif;
+    --design-font-weight: 400;
+
+ }
+ .daddy{
+  --background-color: #3a3836;
+  --contrasting-color: white;
+  --highlight-color: crimson;
+  --text-color: white;
+  --transition-delay: 1s;
+  --design-font: "clarendon-wide-sketch", sans-serif;
+  --design-font-weight: 700;
+}
+/****** MOBILE SITE VARIABLES ******/
+@media (max-width: 850px) {
+  :root {
+    --background-color: purple;
+    --contrasting-color: rgb(255, 253, 107);
+    --highlight-color: rgb(255, 253, 107);
+    --text-color: black;
+    --transition-delay: 0s;
+    --design-font: sans-serif;
+    --design-font-weight: 400;
+    --design-font-size: 2.5rem;
+    --daddy-font: "clarendon-wide-sketch", sans-serif;
+    --dahlia-font: "dalliance-script-display", sans-serif;
+    --footer-button-text: 2rem;
+    --footer-align: center;
+    --two-rem: 2rem;
+    --three-rem: 3rem;
+  }
+  .dahlia {
+    --banner-text-size: 2.25rem;
+  }
+}
+.carousel {
+  background-color: transparent;
+  height: 60vh
+}
+.carousel-inner {
+  background-color: transparent;
+  object-fit: contain;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  height: 100%;
+}
+.carousel-inner img {
+  object-fit: contain;
+  height:60vh;
+  border-image: linear-gradient(#f6b73c, #DA8A67) 140;
+  border-width: 4px;
+  border-style: solid;
+  filter: drop-shadow(2px 2px 6px #64609A);
+  }
+.slider-container {
+  object-fit: cover;
+}
+.indicators {
+  background-color:#64609A;
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-right: 15%;
+  margin-bottom: 1rem;
+  margin-left: 15%;
+  background-color: transparent;
+}
+
+#photos button:not(:disabled), [
+  type=button]:not(:disabled), 
+  [type=reset]:not(:disabled), 
+  [type=submit]:not(:disabled) {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+}

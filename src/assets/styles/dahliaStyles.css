@@ -1,4 +1,43 @@
-:root {
+/*DEFINE SITE VARIABLES */
+ :root {
+    --background-color: purple;
+    --contrasting-color: rgb(255, 253, 107);
+    --highlight-color: rgb(255, 253, 107);
+    --text-color: black;
+    --transition-delay: 0s;
+    --design-font: sans-serif;
+    --design-font-weight: 400;
+    --design-font-size: .75rem;
+    --daddy-font: "clarendon-wide-sketch", sans-serif;
+    --dahlia-font: "dunhill-script", sans-serif;
+    --footer-button-text: 3rem;
+    --footer-align: right;
+    --two-rem: 2rem;
+    --three-rem: 3rem;
+    --banner-text-size: 3.25rem;
+ }
+ .dahlia{
+    --background-color: crimson;
+    --contrasting-color: black;
+    --highlight-color: rgb(255, 253, 107);
+    --text-color: black;
+    --transition-delay: 1s;
+    --design-font: "dunhill-script", sans-serif;
+    --design-font-weight: 400;
+
+ }
+ .daddy{
+    --background-color: #3a3836;
+    --contrasting-color: white;
+    --highlight-color: crimson;
+    --text-color: white;
+    --transition-delay: 1s;
+    --design-font: "clarendon-wide-sketch", sans-serif;
+    --design-font-weight: 700;
+ }
+/****** MOBILE SITE VARIABLES ******/
+@media (max-width: 850px) {
+  :root {
     --background-color: purple;
     --contrasting-color: rgb(255, 253, 107);
     --highlight-color: rgb(255, 253, 107);
@@ -7,44 +46,55 @@
     --design-font: sans-serif;
     --design-font-weight: 400;
     --design-font-size: 2.5rem;
-
     --daddy-font: "clarendon-wide-sketch", sans-serif;
-    --dahlia-font: "dalliance-script-display", sans-serif;;
- }
- .dahlia{
-    --background-color: crimson;
-    --contrasting-color: black;
-    --highlight-color: rgb(255, 253, 107);
-    --text-color: black;
-    --transition-delay: 1s;
-    --design-font: "dalliance-script-display", sans-serif;;
-    --design-font-weight: 400;
-    --design-font-size: 3.5rem;
-
- }
- .daddy{
-    --background-color: black;
-    --contrasting-color: white;
-    --highlight-color: crimson;
-    --text-color: white;
-    --transition-delay: 1s;
-    --design-font: "clarendon-wide-sketch", sans-serif;
-    --design-font-weight: 700;
-    --design-font-size: 2.5rem;
- }
+    --dahlia-font: "dalliance-script-display", sans-serif;
+    --footer-button-text: 2rem;
+    --footer-align: center;
+    --two-rem: 2rem;
+    --three-rem: 3rem;
+  }
+  .dahlia {
+    --banner-text-size: 2.25rem;
+  }
+}
 /* SEMANTIC STYLES */
  body{
     background-color: var(--background-color);
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     padding-top: 2.5rem;
     color: var(--text-color);
     transition-delay: var(--transition-delay);
-    transition: all 0.5s ease-in-out;
+    transition: all 1.5s ease-in-out;
+    min-height: 100vh;
+ }
+ footer{
+  font-family: var(--design-font);
+  text-align: var(--footer-align);
+  padding-bottom: 1rem;
+  padding-right: 20px;
+ }
+ footer > button {
+  background-color: transparent;
+  border-style: none;
+  color: var(--highlight-color);
+  font-size: var(--footer-button-text);
+  color: white;
+  opacity: .5;
+  transform: translateY(8px);
+ }
+ footer > button:hover {
+  color: white;
+  opacity: .8;
+  text-shadow: 5px 4px 4px black;
  }
  h1{
+    display: block;
     color: var(--text-color);
     font-family: var(--design-font);
     font-weight: var(--design-font-weight);
+ }
+ h2{
+  padding-top: var(--two-rem);
  }
  h3{
    color: var(--text-color);
@@ -57,12 +107,16 @@
    display: inline-block;
    margin-left: auto;
    margin-right: auto;
+   padding-top: 8px;
+   margin-bottom: 8px;
+   transition: height .4s;
  }
- header > h1 {
+ header h1 {
    display: inline;
    font-family: var(--design-font);
-   font-size: var(--design-font-size);
+   font-size: var(--banner-text-size);
    font-weight: var(--design-font-weight);
+   animation: fadeIn 5s;
  }
  nav {
    display: inline-block;
@@ -70,25 +124,54 @@
    margin-right: auto;
    padding-top: .5rem;
  }
+ nav a:link {
+   text-decoration: none;
+   color:white;
+   font-size: 1.2rem;
+ }
+ nav a:hover {
+  text-decoration: none;
+  color: var(--contrasting-color);
+  font-size: 1.2rem;
+ }
+ nav a:visited {
+  text-decoration: none;
+  color: var(--contrasting-color);
+  font-size: 1.2rem;
+ }
  nav > ul {
    display: inline-block;
    margin-left: auto;
    margin-right: auto;
+   align-items: center;
+   transform: translateY(-12px);
  }
  nav > ul > li {
    display: inline-block;
    margin-left: auto;
    margin-right: auto;
-   padding: 1.75rem;
+   padding: .75rem;
    text-decoration: none;
  }
+ ul{
+  list-style: none;
+ }
 /* STRUCTURAL STYLES */
+ #root{
+  position: relative;
+  min-height: 100vh;;
+  height: -webkit-fill-available;
+}
  #dahlia{
     height: 100%;
     object-fit: cover;
     object-position: 0%;
     display: inline;
     margin-right: 0px;
+    transition: width .6s;
+    border-width: 0;
+    border-right: 6px solid;
+    border-image: linear-gradient(rgb(225, 209, 232), rgb(156, 92, 212)) 0 100%;
  }
  #daddy{
    aspect-ratio: 1 / 1;
@@ -99,8 +182,10 @@
    overflow: hidden;
    border-style: solid;
    border-width: 4px;
-   border-radius: 50%;
+   border-radius: 25%;
    border-color: var(--contrasting-color);
+   filter: drop-shadow(6px 6px 15px black);
+   transition: all 3s;
 }
  #buttons{
     display: block;
@@ -145,11 +230,28 @@
    color: white;
 }
 /* SPECIFIC CLASS DEFINITIONS */
- .primary-logo {
-   width: 5.5rem;
-   display: inline;
-   margin-right: 6px;
+ .banner{
+  font-size: var(--banner-text-size);
+  padding-top: 32px;
  }
+ .primary-logo {
+   display: inline-block;
+   width: 6.5rem;
+   margin-right: 6px;
+   transition: all 5s ease-in-out;
+   transform: translateY(-16px);
+  }
+  .show-title{
+    display: inline-block;
+    font-weight: 700;
+    padding-right: 8rem;
+    margin-bottom: 9px;
+  }
+  .show-title-recent{
+    display: inline-block;
+    font-weight: 700;
+    margin-bottom: 9px;
+  }
 /* UTILITY STYLES */
  .dahlia-text {
   font-family: var(--dahlia-font);
@@ -157,14 +259,21 @@
  .daddy-text {
   font-family: var(--daddy-font);
  }
- .footer {
-   margin-top: 1.5rem;
+ .fade-in-image { 
+  animation: fadeIn 5s; 
  }
  .hidden {
    display: none;
  }
+ .invisible {
+  display: none;
+ }
+ .italic {
+  font-style: italic;
+ }
  .landing-page {
   border-style: none;
+  width: 100%;
   background: none;
   font-size: 2.5rem;
  }
@@ -173,13 +282,27 @@
   background: none;
   color: white;
  }
+ .light{
+  font-weight: 200;
+ }
+ .opacity7{
+  opacity: .7;
+ }
  .show {
    display: block;
  }
+ .show-detail {
+  position: relative;
+  width: 300px;
+  margin-bottom: 1.25rem;
+ }
  .tickets {
+  position: absolute;
+  right: 0px;
   border-style: none;
   background-color: var(--highlight-color);
   color: var(--text-color);
+  margin-left: 12px;
  }
  .white {
     color: white;

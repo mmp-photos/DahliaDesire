@@ -1,4 +1,9 @@
 FONTS USED
+DunhillScript Semibold
+font-family: "dunhill-script", sans-serif;
+font-weight: 600;
+font-style: normal;
+
 Dalliance OT Script Display
 font-family: "dalliance-script-display", sans-serif;
 font-weight: 400;

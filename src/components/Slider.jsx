@@ -5,7 +5,7 @@ import PrimaryText from './PrimaryText.jsx'
 import Shows from './Shows.jsx'
 import dahliaPic from './../assets/images/dahlia.jpeg';
 
-function Slider() {
+function Slider( { name, setName } ) {
 
   const dahlia = useRef();
   const slider = useRef();
@@ -113,18 +113,11 @@ function Slider() {
             <Col md={6}>
                 <div id="daddy" ref={daddy}>
                 <img id="dahlia" style={{width: dahliaWidth}} ref={dahlia} src={dahliaPic} alt="Dahlia" />
-                <div
+                {/* <div
                 ref={slider}
                 className="editPoint__left"
-                onMouseDown={(e) => handleMouseDown(e)}></div>
+                onMouseDown={(e) => handleMouseDown(e)}></div> */}
                 </div>
-
-                {/* <section id="buttons">
-                    <button onClick={showDahlia}>Dahlia</button>
-                    <button onClick={showBoth}>Split</button>
-                    <button onClick={showDaddy}>Daddy</button>
-                </section> */}
-
             </Col>
             <Col>
                 <PrimaryText name={name} bio={bio} />

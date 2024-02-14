@@ -12,25 +12,25 @@ import {
 
 import flowerLogo from './../assets/images/flower_logo.svg';
 
-const Head = ({name}) => {
+const Footer = ({ name, setName }) => {
+    function raiseInvoiceClicked(){
+        const url = 'somesite.com?data=yourDataToSend';
+        window.open(url, '_blank');
+    }
+
+    const handleClick = (url) => {
+        // console.log(url);
+        window.open(url, '_blank');
+    }
+
     return(
-        <Container className="footer">
-            <Row>
-                <Col md={3}>
-                    <nav>
-                        <ul>
-                            <li>Photos</li>
-                            <li>Burlesque AF</li>
-                            <li>Book Me</li>
-                        </ul>
-                    </nav>
-                </Col>
-                <Col>
-                    <h3>The Afro-Latin Laissez Faire steaming up the Midwest one stage at a time.</h3>
-                </Col>
-            </Row>
-        </Container>
+        <footer style={{position: "absolute", bottom: "50px", width: "100%"}}>
+            <span className="daddy-text opacity7">Folow your desires&nbsp; &nbsp;</span> 
+            <button onClick={() => handleClick('https://www.facebook.com/dahlia.desire/')}><i className="fa-brands fa-facebook"></i></button>
+            <button onClick={() => handleClick('https://www.instagram.com/dahlia.desire/')}><i className="fa-brands fa-instagram"></i></button>
+            <button onClick={() => handleClick('https://linktr.ee/dahlia.desire')}><i className="fa-solid fa-link button"></i></button>
+        </footer>
     )
 };
 
-export default Head;
+export default Footer;
