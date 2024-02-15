@@ -16,7 +16,7 @@ const Shows = () => {
           const futureDatesArray = shows.filter(item => new Date(item.date) > currentDate);
           setUpcomingShows(futureDatesArray);
         };
-    
+        
         // Call compareDates function
         compareDates();
       }, [shows]);
@@ -47,6 +47,7 @@ const Shows = () => {
         return 0;
     });
 
+    console.log(upcomingShows);
     const listUpcomingShows = (item) =>{
         console.log(`The number of upcoming shows is ${listUpcomingShows.length}`)
         if(upcomingShows.length === 0){
@@ -104,7 +105,7 @@ const Shows = () => {
             return(
                 <li key={item.name}>
                     <span className="show-title-recent">{name}</span><br />
-                    <span>{aDate.toLocaleDateString('en-us', dateOptions)}</span>
+                    <span className="show-time-recent">{aDate.toLocaleDateString('en-us', dateOptions)}</span>
                 </li>
             )
         }

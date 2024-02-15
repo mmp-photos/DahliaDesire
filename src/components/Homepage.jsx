@@ -42,18 +42,18 @@ function Homepage( { name, setName }) {
       document.body.classList.remove('daddy')
       document.body.classList.add('dahlia')
       setName('Dahlia')
-    }, 2500);
+    }, 2000);
   };
 
   const showDaddy = () => {
-    console.log('Dahlia was clicked')
+    console.log('Daddy was clicked')
     dahlia.current.style.width = '0px';
     daddy.current.style.borderRadius = '50%'
     setTimeout(() => {
       document.body.classList.remove('dahlia');
       document.body.classList.add('daddy');  
       setName('Daddy')
-    }, 2500);
+    }, 2000);
   };
 
   return (

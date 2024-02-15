@@ -12,7 +12,7 @@ const showsData = [
         tickets: "https://www.eventbrite.com/e/the-french-connection-tickets-780865508757"
     },
     {
-        date: "2024-02-14 20:00:00",
+        date: "2024-02-22 20:00:00",
         name: "Spicy Magic Comedy Night",
         venue: "White Rabbit Cabaret",
         tickets: "https://www.eventbrite.com/e/spicy-magic-comedy-nite-tickets-815908553447?aff=oddtdtcreator"
