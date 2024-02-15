@@ -34,8 +34,9 @@ function Homepage( { name, setName }) {
   }, [dimensions]);
  
   //BUTTON FUNCTIONS//
-  const showDahlia = () => {
+  const showDahlia = (e) => {
     console.log('Dahlia was clicked')
+    e.stopPropagation();
     dahlia.current.style.width = '100%'
     daddy.current.style.borderRadius = '50%'
     setTimeout(() => {
@@ -61,8 +62,8 @@ function Homepage( { name, setName }) {
         <Container style={{backgroundColor: "none"}}>
         <Row>
             <Col md={6} style={{paddingLeft: "3rem", paddingRight: "3rem"}}>
-                <div id="daddy" ref={daddy}>
-                <img id="dahlia" style={{width: dahliaWidth}} ref={dahlia} src={dahliaPic} alt="Dahlia" />
+                <div id="daddy" ref={daddy} onClick={showDaddy}>
+                <img id="dahlia" style={{width: dahliaWidth}} ref={dahlia} src={dahliaPic} alt="Dahlia" onClick={showDahlia} />
                   {/* <div
                     ref={slider}
                     className="editPoint__left"
