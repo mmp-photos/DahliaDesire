@@ -241,7 +241,7 @@
   width: 450px;
   padding: 4rem;
   margin: auto;
-  background-color: white;
+  background-color: var(--background-color);
   border: 9px solid var(--contrasting-color);
  }
  .primary-logo {

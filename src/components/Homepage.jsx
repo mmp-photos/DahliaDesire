@@ -38,6 +38,7 @@ function Homepage( { name, setName }) {
     console.log('Dahlia was clicked')
     e.stopPropagation();
     dahlia.current.style.width = '100%'
+    dahlia.current.style.borderRight = '0px'
     daddy.current.style.borderRadius = '50%'
     setTimeout(() => {
       document.body.classList.remove('daddy')
@@ -50,6 +51,7 @@ function Homepage( { name, setName }) {
     console.log('Daddy was clicked')
     dahlia.current.style.width = '0px';
     daddy.current.style.borderRadius = '50%'
+    dahlia.current.style.borderRight = '0px'
     setTimeout(() => {
       document.body.classList.remove('dahlia');
       document.body.classList.add('daddy');  
