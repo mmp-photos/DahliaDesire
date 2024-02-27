@@ -52,7 +52,7 @@ const Shows = () => {
         console.log(`The number of upcoming shows is ${listUpcomingShows.length}`)
         if(upcomingShows.length === 0){
             console.log(`too few upcoming shows`)
-            return null
+            return <li>Check back soon for new show announcements!</li>
         } else {
             console.log(`There are upcoming shows`)
             let name = item.name;
@@ -87,10 +87,7 @@ const Shows = () => {
     }
     
     const listRecentShows = (item) =>{
-        if(upcomingShows.length === 0){
-            console.log(`too few upcoming shows`)
-            return null
-        } else {
+        if(recentShows.length > 0){
             let name = item.name;
             let date = item.date;
             let ticketLink = item.tickets;
@@ -113,19 +110,17 @@ const Shows = () => {
 
     return(
         <>
-            {upcomingShows.length >= 0
-              ? <h2>Upcoming Shows</h2>
-              : null}
-                <ul>
-                    {console.log(`Upcoming Shows array ${upcomingShows}`)}
-                    {upcomingShows.map((item) => listUpcomingShows(item))}
-                </ul>
-            {upcomingShows.length < 5 && recentShows.length >= 1
-              ? <h2>Recent Shows</h2>
-              : null}
-              <ul>
+            <h2>Upcoming Shows</h2>
+            <ul>
+            {upcomingShows.length === 0
+                ? <li>Check back soon for newly added shows!</li>
+                : upcomingShows.map((item) => listUpcomingShows(item))
+            }
+            </ul>
+            <h2>Recent Shows</h2>
+            <ul>
                 {recentShows.map((item) => listRecentShows(item))}
-              </ul>
+            </ul>
         </>
     )
 };
