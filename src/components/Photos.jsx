@@ -9,9 +9,15 @@ import {
 import dahlia01 from '../assets/images/dahlia01.jpg';
 import dahlia02 from '../assets/images/dahlia02.jpg';
 import dahlia03 from '../assets/images/dahlia03.jpg';
+import dahlia04 from '../assets/images/dahlia04.jpg';
+import dahlia05 from '../assets/images/dahlia05.jpg';
+import dahlia06 from '../assets/images/dahlia06.jpg';
 import daddy01 from '../assets/images/daddy01.jpg';
 import daddy02 from '../assets/images/daddy02.jpg';
 import daddy03 from '../assets/images/daddy03.jpg';
+import daddy04 from '../assets/images/daddy04.jpg';
+import daddy05 from '../assets/images/daddy05.jpg';
+import daddy06 from '../assets/images/daddy06.jpg';
 
 const Photos = ( { name, setName } ) => {
 
@@ -40,6 +46,21 @@ const Photos = ( { name, setName } ) => {
                 src: dahlia03,
                 altText: 'Slide Three'
             },
+            { 
+                caption: 'Sample Caption Three',
+                src: dahlia04,
+                altText: 'Slide Three'
+            },
+            { 
+                caption: 'Sample Caption Three',
+                src: dahlia05,
+                altText: 'Slide Three'
+            },
+            { 
+                caption: 'Sample Caption Three',
+                src: dahlia06,
+                altText: 'Slide Three'
+            },
         ];
     } else if (name === "Daddy") {
         items = [ 
@@ -58,6 +79,21 @@ const Photos = ( { name, setName } ) => {
                 src: daddy03,
                 altText: 'Slide Three'
             },
+            { 
+                caption: 'Sample Caption Three',
+                src: daddy04,
+                altText: 'Slide Three'
+            },
+            { 
+                caption: 'Sample Caption Three',
+                src: daddy05,
+                altText: 'Slide Three'
+            },
+            { 
+                caption: 'Sample Caption Three',
+                src: daddy06,
+                altText: 'Slide Three'
+            }
         ];
     } else {
         // Default items if name is not provided or doesn't match any condition
