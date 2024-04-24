@@ -20,7 +20,7 @@ const showsData = [
     {
         date: "2024-05-17 00:00:00",
         name: "Shit Show",
-        venue: "State Stree Pub",
+        venue: "State Street Pub",
         tickets: ""
     },
     {
