@@ -46,7 +46,7 @@ const Shows = () => {
         // names must be equal
         return 0;
     });
-
+    
     console.log(upcomingShows);
     const listUpcomingShows = (item) =>{
         console.log(`The number of upcoming shows is ${listUpcomingShows.length}`)
@@ -59,7 +59,10 @@ const Shows = () => {
             let date = item.date;
             let currentDate = new Date();
 
+            let checkTime = item.date.split(' ');
+            console.log(`Check time is ${checkTime[1]}`)
             let aDate = new Date(item.date);
+            // console.log(`aDate is ${aDate}`);
             let timeOptions = aDate.toLocaleTimeString(undefined, {
                 hour: 'numeric',
                 minute: 'numeric',
@@ -72,13 +75,13 @@ const Shows = () => {
             };
 
             return(
-                <li className="show-detail" key={item.name}>
+                <li className="show-detail" key={item.date}>
                     {item.name ? <span className="show-title">{name}</span>
                                : null}
                     {ticketLink  ? <button className="tickets" onClick={() => ticketWindow(ticketLink)}>Get Tickets</button>
                                  : null}
                     <br />
-                    <span className="light">{aDate.toLocaleDateString('en-us', options)}</span><br /><span>{aDate.toLocaleTimeString('en-us', timeOptions)}</span>
+                    <span className="light">{aDate.toLocaleDateString('en-us', options)}</span>{checkTime[1] != "00:00:00" ? (<span><br /> {aDate.toLocaleTimeString('en-us', timeOptions)}</span>) : null }
                     {item.venue ? <span className="italic"><br />{item.venue}</span>
                                 : null}
                 </li>
