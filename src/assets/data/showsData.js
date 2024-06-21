@@ -60,10 +60,10 @@ const showsData = [
         tickets: ""
     },
     {
-        date: "2024-06-29 00:00:00",
+        date: "2024-06-29 21:00:00",
         name: "Rendezvous",
         venue: "White Rabbit",
-        tickets: ""
+        tickets: "https://www.eventbrite.com/e/white-rabbit-presents-rendezvous-a-burlesque-and-drag-revue-tickets-915664175197?aff=oddtdtcreator"
     }
 ];
 
