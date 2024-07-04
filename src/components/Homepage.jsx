@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
+import { useParams } from 'react-router-dom'
 
 import PrimaryText from './PrimaryText.jsx'
 import dahliaPic from '../assets/images/dahlia.jpeg';
@@ -8,12 +9,21 @@ function Homepage( { name, setName }) {
   const dahlia = useRef();
   const [ dahliaWidth, setDahliaWidth ] = useState(0);
   const [ sliderPosition, setSliderPosition ] = useState(0);
+  let { presentation } = useParams();
   
   const daddy = useRef();
   const [dimensions, setDimensions] = useState({
       width: 0,
       height: 0,
   });
+
+  useEffect(() =>{
+    if(presentation){
+      console.log(`Already set for Dahlia`)
+      setName('Dahlia')
+    }
+  }, [presentation]);
+
   useEffect(() => {
       if (daddy.current) {
           setDimensions({
@@ -65,12 +75,7 @@ function Homepage( { name, setName }) {
         <Row>
             <Col md={6} style={{paddingLeft: "3rem", paddingRight: "3rem"}}>
                 <div id="daddy" ref={daddy} onClick={showDaddy}>
-                <img id="dahlia" style={{width: dahliaWidth}} ref={dahlia} src={dahliaPic} alt="Dahlia" onClick={showDahlia} />
-                  {/* <div
-                    ref={slider}
-                    className="editPoint__left"
-                    onMouseDown={(e) => handleMouseDown(e)}>
-                  </div> */}
+                  <img id="dahlia" style={{width: dahliaWidth}} ref={dahlia} src={dahliaPic} alt="Dahlia" onClick={showDahlia} />
                 </div>
             </Col>
 

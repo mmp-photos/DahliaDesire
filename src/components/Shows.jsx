@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useParams } from 'react';
 import showsData from '../assets/data/showsData';
 
 const Shows = () => {
@@ -113,6 +113,8 @@ const Shows = () => {
 
     return(
         <>
+            <h2>Desire</h2>
+            <p>Afro-Latinx🇵🇷🇿🇦They/them. Metal maiden. Eye fuc*er extraordinaire. Burlesque & Drag performer. Producer. DEI Consultant.</p>
             <h2>Upcoming Shows</h2>
             <ul>
             {upcomingShows.length === 0

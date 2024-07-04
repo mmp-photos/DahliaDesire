@@ -15,6 +15,7 @@ function App() {
   <Header name={name} />
   <Routes>
     <Route path="/" element = {<Homepage name={name} setName={setName} />} />
+    <Route path="/:presentation/" element = {<Homepage name={name} setName={setName} />} />
     <Route path="/photos" element = {<Photos name={name} />} />
     <Route path="/booking" element = {<Booking name={name}/>} />
   </Routes>
