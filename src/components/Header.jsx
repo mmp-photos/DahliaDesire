@@ -18,7 +18,7 @@ const Header = ({ name, setName }) => {
 
     const seth1Size = () => {
         let windowWidth = window.screen.width;
-        console.log(windowWidth)
+        // console.log(windowWidth)
         if(windowWidth > 400){
             return
         } else if (name === "Dahlia") {

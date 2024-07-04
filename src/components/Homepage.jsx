@@ -27,7 +27,7 @@ function Homepage( { name, setName }) {
     if (dimensions.width != 0) {
         // console.log(`dimensions were updated to ${dimensions.width}`)
         const half = dimensions.width / 2
-        console.log(`Half is ${half}`)
+        // console.log(`Half is ${half}`)
         setDahliaWidth(half + 16)
         setSliderPosition(half)
     }
