@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
     CarouselControl, 
     Carousel, 
     CarouselItem, 
     CarouselIndicators, 
 } from 'reactstrap';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
+const helmetContext = {};
 
 import dahlia01 from '../assets/images/dahlia01.jpg';
 import dahlia02 from '../assets/images/dahlia02.jpg';
@@ -20,11 +23,14 @@ import daddy05 from '../assets/images/daddy05.jpg';
 import daddy06 from '../assets/images/daddy06.jpg';
 
 const Photos = ( { name, setName } ) => {
-
+    const [ helmetTitle, setHelmetTitle ] = useState();
+    useEffect(() => {
+        setHelmetTitle(`Photos - Desire`)
+    }, []);
     // State for Carousel
     const [activeIndex, setActiveIndex] = useState(0); 
     const [animating, setAnimating] = useState(false); 
-    console.log(`Name passed is ${name}`);
+
     // Sample items for Carousel
     let items = [];
 
@@ -149,6 +155,10 @@ const Photos = ( { name, setName } ) => {
     }); 
 
     return (
+        <HelmetProvider context={helmetContext}>
+        <Helmet>
+            <title>{helmetTitle}</title>
+        </Helmet>
         <section id="photos">
         <Carousel previous={previousButton} next={nextButton} 
             activeIndex={activeIndex}> 
@@ -165,6 +175,7 @@ const Photos = ( { name, setName } ) => {
                 direction="next" onClickHandler={nextButton} /> 
         </Carousel>
         </section>
+        </HelmetProvider>
     );
 } 
 export default Photos;
