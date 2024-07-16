@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect, useParams } from 'react';
 import showsData from '../assets/data/showsData';
+import { Link } from 'react-router-dom';
 
-const Shows = () => {
-    
+const Shows = ( { presentation } ) => {
     const shows = showsData;
     const [ upcomingShows, setUpcomingShows ] = useState([]);
     const [ recentShows, setRecentShows ] = useState([]);
@@ -47,20 +47,19 @@ const Shows = () => {
         return 0;
     });
     
-    console.log(upcomingShows);
     const listUpcomingShows = (item) =>{
-        console.log(`The number of upcoming shows is ${listUpcomingShows.length}`)
+        // console.log(`The number of upcoming shows is ${listUpcomingShows.length}`)
         if(upcomingShows.length === 0){
-            console.log(`too few upcoming shows`)
+            // console.log(`too few upcoming shows`)
             return <li>Check back soon for new show announcements!</li>
         } else {
-            console.log(`There are upcoming shows`)
+            // console.log(`There are upcoming shows`)
             let name = item.name;
             let date = item.date;
             let currentDate = new Date();
 
             let checkTime = item.date.split(' ');
-            console.log(`Check time is ${checkTime[1]}`)
+            // console.log(`Check time is ${checkTime[1]}`)
             let aDate = new Date(item.date);
             // console.log(`aDate is ${aDate}`);
             let timeOptions = aDate.toLocaleTimeString(undefined, {
@@ -75,8 +74,8 @@ const Shows = () => {
             };
 
             return(
-                <li className="show-detail" key={item.date}>
-                    {item.name ? <span className="show-title">{name}</span>
+                <li className="show-detail" key={item.id}>
+                    {item.name ? <Link to={`/${presentation}/${item.id}`}><span className="show-title">{name}</span></Link>
                                : null}
                     {ticketLink  ? <button className="tickets" onClick={() => ticketWindow(ticketLink)}>Get Tickets</button>
                                  : null}
@@ -103,7 +102,7 @@ const Shows = () => {
             };
 
             return(
-                <li key={item.name}>
+                <li key={item.id}>
                     <span className="show-title-recent">{name}</span><br />
                     <span className="show-time-recent">{aDate.toLocaleDateString('en-us', dateOptions)}</span>
                 </li>

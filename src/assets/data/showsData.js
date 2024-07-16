@@ -81,7 +81,8 @@ const showsData = [
         date: "2024-07-12 21:00:00",
         name: "Burlesque AF- Getaway",
         venue: "Almost Famous",
-        tickets: "https://almostfamousindy.com/indianapolis-chatham-home-almost-famous-events"
+        tickets: "https://almostfamousindy.com/indianapolis-chatham-home-almost-famous-events",
+        about: "Get Immersed in Frankie's sinfully lush mélange of dance, circus, music and design. Marvel at Our Stunning Athletism, Story Telling , Opulent Costuming and Beautiful Lighting. Sensual Performances."
     },
     {
         id: "24071901",
