@@ -1,15 +1,21 @@
 import { Routes, Route, useParams } from 'react-router-dom';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { AppContext } from './components/AppContext';
 import Homepage from './components/Homepage.jsx';
 import Photos from './components/Photos.jsx';
 import Booking from './components/Booking.jsx';
 import Footer from './components/Footer.jsx';
 import Header from './components/Header.jsx';
 import ShowDetails from './components/ShowDetails.jsx';
+import stylePresentation from './components/functions/stylePresentation';
 
 const Wrapper = ({ component: Component, ...rest }) => {
   const params = useParams();
-  const [ initialRender, SetInitialRender ] = useState(true);
+  const { presentation, setPresentation, initialRender, setInitialRender } = useContext(AppContext);
+  useEffect(() => {
+    stylePresentation();
+  }, [presentation])
+
   return (
     <>
       <Header params={params} initialRender={initialRender}  />
@@ -29,7 +35,7 @@ function App() {
         <Route path="/:name/booking" element={<Wrapper component={Booking} />} />
       </Routes>
       <Footer />
-    </>
+    </>    
   );
 }
 

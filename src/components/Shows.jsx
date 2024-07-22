@@ -26,7 +26,8 @@ const Shows = ( { presentation } ) => {
         const compareDates = () => {
           const currentDate = new Date();
           const futureDatesArray = shows.filter(item => new Date(item.date) < currentDate);
-          setRecentShows(futureDatesArray);
+          const pastDatesArray = futureDatesArray.reverse();
+          setRecentShows(futureDatesArray.slice(0, 5));
         };
     
         // Call compareDates function
