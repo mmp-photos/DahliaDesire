@@ -7,24 +7,31 @@ import Booking from './components/Booking.jsx';
 import Footer from './components/Footer.jsx';
 import Header from './components/Header.jsx';
 import ShowDetails from './components/ShowDetails.jsx';
-import stylePresentation from './components/functions/stylePresentation';
+import styleName from './components/functions/styleName.jsx';
 
 const Wrapper = ({ component: Component, ...rest }) => {
   const params = useParams();
-  const { presentation, setPresentation, initialRender, setInitialRender } = useContext(AppContext);
+  const { name, setName: updateName, initialRender, setInitialRender } = useContext(AppContext);
+
   useEffect(() => {
-    stylePresentation();
-  }, [presentation])
+    if (params.name && name !== params.name) {
+      updateName(params.name);
+    }
+  }, [params.name, name, updateName]);
 
   return (
     <>
-      <Header params={params} initialRender={initialRender}  />
+      <Header params={params} initialRender={initialRender} />
       <Component {...rest} params={params} />
     </>
   );
 };
 
 function App() {
+  const { name, setName: updateName } = useContext(AppContext);
+
+  styleName(name);
+
   return (
     <>
       <Routes>
@@ -35,7 +42,7 @@ function App() {
         <Route path="/:name/booking" element={<Wrapper component={Booking} />} />
       </Routes>
       <Footer />
-    </>    
+    </>
   );
 }
 

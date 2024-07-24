@@ -4,15 +4,15 @@ import { useNavigate } from 'react-router-dom';
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [presentation, setPresentation] = useState(null);
+  const [name, setName] = useState(null);
   const [initialRender, setInitialRender] = useState(true);
 
   const navigate = useNavigate();
 
-  const updatePresentation = (newPresentation) => {
-      setPresentation(newPresentation);
-      if (newPresentation) {
-          navigate(`/${newPresentation}`);
+  const updateName = (newName) => {
+      setName(newName);
+      if (newName) {
+          navigate(`/${newName}`);
       } else {
           navigate('/');
       }
@@ -20,16 +20,15 @@ export const AppProvider = ({ children }) => {
 
 
   useEffect(() => {
-    // Example logic to set presentation from URL params or other source
     const urlParams = new URLSearchParams(window.location.search);
-    const presentationParam = urlParams.get('presentation');
-    if (presentationParam) {
-      setPresentation(presentationParam);
+    const nameParam = urlParams.get('name');
+    if (nameParam) {
+      setName(nameParam);
     }
   }, []);
 
   return (
-    <AppContext.Provider value={{ presentation, setPresentation: updatePresentation, initialRender, setInitialRender }}>
+    <AppContext.Provider value={{ name, setName: updateName, initialRender, setInitialRender }}>
       {children}
     </AppContext.Provider>
   );
