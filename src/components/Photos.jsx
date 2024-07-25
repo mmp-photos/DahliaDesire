@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { 
     CarouselControl, 
     Carousel, 
     CarouselItem, 
     CarouselIndicators, 
 } from 'reactstrap';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { AppContext } from './AppContext';
 
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 const helmetContext = {};
 
 import dahlia01 from '../assets/images/dahlia01.jpg';
@@ -22,10 +23,12 @@ import daddy04 from '../assets/images/daddy04.jpg';
 import daddy05 from '../assets/images/daddy05.jpg';
 import daddy06 from '../assets/images/daddy06.jpg';
 
-const Photos = ( { name, setName } ) => {
+const Photos = () => {
+    const { name } = useContext(AppContext);
+    console.log(name);
     const [ helmetTitle, setHelmetTitle ] = useState();
     useEffect(() => {
-        setHelmetTitle(`Photos - Desire`)
+        setHelmetTitle(`Photos - ${name} Desire`)
     }, []);
     // State for Carousel
     const [activeIndex, setActiveIndex] = useState(0); 

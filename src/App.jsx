@@ -1,5 +1,5 @@
 import { Routes, Route, useParams } from 'react-router-dom';
-import { useState, useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { AppContext } from './components/AppContext';
 import Homepage from './components/Homepage.jsx';
 import Photos from './components/Photos.jsx';

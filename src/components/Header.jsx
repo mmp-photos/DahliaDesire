@@ -5,12 +5,12 @@ import { AppContext } from './AppContext';
 
 const Header = ({ params }) => {
     const { name, setName, initialRender, setInitialRender } = useContext(AppContext);
-    console.log(`Name in Header is ${name}`);
+    // console.log(`Name in Header is ${name}`);
     const navigate = useNavigate();
 
     const navigateHome = () => {
         navigate('/')
-        setInitialRender(true);
+        window.location.reload(); 
     };
 
     const seth1Size = () => {
@@ -37,14 +37,14 @@ const Header = ({ params }) => {
                 />
                 {initialRender
                     ?
-                    <h1>Name your Desire</h1>
+                    <h1 className="daddy-text white">Name your Desire</h1>
                     :
                     <>
                     <h1 style={{ fontSize: h1Size }}>{name} Desire</h1>
                     <nav>
                         <ul>
-                            <li><Link to="/photos">Photos</Link></li>
-                            <li><Link to="/booking">Book Me</Link></li>
+                            <li><Link to={`/${name}/photos`}>Photos</Link></li>
+                            <li><Link to={`/${name}/booking`}>Book Me</Link></li>
                             <li><Link to="/">Shows</Link></li>
                         </ul>
                     </nav>

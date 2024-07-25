@@ -278,6 +278,12 @@
  .hidden {
    display: none;
  }
+ .font-normal {
+  font-size: 1rem;
+ }
+ .font-double {
+  font-size: 2rem;
+ }
  .invisible {
   display: none;
  }

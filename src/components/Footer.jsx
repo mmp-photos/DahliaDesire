@@ -26,9 +26,9 @@ const Footer = ({ name, setName }) => {
     return(
         <footer style={{bottom: "50px", width: "100%"}}>
             <span className="daddy-text opacity7">Folow your desires&nbsp; &nbsp;</span> 
-            <button onClick={() => handleClick('https://www.facebook.com/dahlia.desire/')}><i className="fa-brands fa-facebook"></i></button>
-            <button onClick={() => handleClick('https://www.instagram.com/dahlia.desire/')}><i className="fa-brands fa-instagram"></i></button>
-            <button onClick={() => handleClick('https://linktr.ee/dahlia.desire')}><i className="fa-solid fa-link button"></i></button>
+            <button className="font-double" onClick={() => handleClick('https://www.facebook.com/dahlia.desire/')}><i className="fa-brands fa-facebook"></i></button>
+            <button className="font-double" onClick={() => handleClick('https://www.instagram.com/dahlia.desire/')}><i className="fa-brands fa-instagram"></i></button>
+            <button className="font-double" onClick={() => handleClick('https://linktr.ee/dahlia.desire')}><i className="fa-solid fa-link button"></i></button>
         </footer>
     )
 };

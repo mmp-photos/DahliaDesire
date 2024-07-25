@@ -22,15 +22,16 @@ function Homepage() {
                 dahlia={dahlia}
                 daddy={daddy}
                 setName={setName}
+                initialRender={initialRender}
                 setInitialRender={setInitialRender}
               />
             </Col>
 
             <Col>
-                <PrimaryText />                
                 {initialRender
                   ?
                   <>
+                    <PrimaryText />
                     <DahliaButton
                         dahlia={dahlia}
                         daddy={daddy}

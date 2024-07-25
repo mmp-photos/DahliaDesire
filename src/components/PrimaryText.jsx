@@ -1,14 +1,12 @@
 import { useState, useRef } from 'react';
 import Shows from './Shows.jsx'
 
-const PrimaryText = ( { name, setName } ) => {
+const PrimaryText = () => {
     return(
         <section>
-          <p className="invisible" style={{width: "400px", color: "white"}}>The Afro-Latin Laissez Faire steaming up the Midwest one stage at a time. Puerto Rican burlesque and drag performer in Indianapolis, IN.</p>
-          {name
-            ? <Shows presentation = {name} />
-            : null
-          }
+          <h2 className="daddy-text white">Indianapolis Burlesque &amp; Drag Performer</h2>
+          <p>Afro-Latinx🇵🇷🇿🇦They/them. Metal maiden. Eye fuc*er extraordinaire.</p>
+          <p>Performer.&nbsp;&nbsp;Producer.&nbsp;&nbsp;DEI Consultant.</p>
         </section>
     )
 };

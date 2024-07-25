@@ -4,7 +4,7 @@ import { AppContext } from '../AppContext';
 import dahliaPic from '../../assets/images/dahlia.jpeg';
 import { showDahlia, showDaddy } from '../functions/toggleFunctions';
 
-export const OpeningOptions = ({ dahlia, daddy, setName, setInitialRender }) => {
+export const OpeningOptions = ({ dahlia, daddy, name, setName, initialRender, setInitialRender }) => {
     const [sliderPosition, setSliderPosition] = useState(0);
     const [dahliaWidth, setDahliaWidth] = useState(0);
     const [dimensions, setDimensions] = useState({

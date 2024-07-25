@@ -1,8 +1,10 @@
-import { useState, useRef, useEffect, useParams } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import showsData from '../assets/data/showsData';
 import { Link } from 'react-router-dom';
+import { AppContext } from './AppContext';
 
-const Shows = ( { presentation } ) => {
+const Shows = () => {
+    const { name } = useContext(AppContext);
     const shows = showsData;
     const [ upcomingShows, setUpcomingShows ] = useState([]);
     const [ recentShows, setRecentShows ] = useState([]);
@@ -55,7 +57,7 @@ const Shows = ( { presentation } ) => {
             return <li>Check back soon for new show announcements!</li>
         } else {
             // console.log(`There are upcoming shows`)
-            let name = item.name;
+            let show_name = item.name;
             let date = item.date;
             let currentDate = new Date();
 
@@ -76,7 +78,7 @@ const Shows = ( { presentation } ) => {
 
             return(
                 <li className="show-detail" key={item.id}>
-                    {item.name ? <Link to={`/${presentation}/${item.id}`}><span className="show-title">{name}</span></Link>
+                    {item.name ? <Link to={`/${name}/${item.id}`}><span className="show-title">{show_name}</span></Link>
                                : null}
                     {ticketLink  ? <button className="tickets" onClick={() => ticketWindow(ticketLink)}>Get Tickets</button>
                                  : null}
@@ -91,7 +93,7 @@ const Shows = ( { presentation } ) => {
     
     const listRecentShows = (item) =>{
         if(recentShows.length > 0){
-            let name = item.name;
+            let show_name = item.name;
             let date = item.date;
             let ticketLink = item.tickets;
             let aDate = new Date(item.date);
@@ -104,7 +106,7 @@ const Shows = ( { presentation } ) => {
 
             return(
                 <li key={item.id}>
-                    <span className="show-title-recent">{name}</span><br />
+                    <span className="show-title-recent">{show_name}</span><br />
                     <span className="show-time-recent">{aDate.toLocaleDateString('en-us', dateOptions)}</span>
                 </li>
             )
@@ -113,8 +115,6 @@ const Shows = ( { presentation } ) => {
 
     return(
         <>
-            <h2>Desire</h2>
-            <p>Afro-Latinx🇵🇷🇿🇦They/them. Metal maiden. Eye fuc*er extraordinaire. Burlesque & Drag performer. Producer. DEI Consultant.</p>
             <h2>Upcoming Shows</h2>
             <ul>
             {upcomingShows.length === 0

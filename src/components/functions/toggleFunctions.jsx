@@ -33,3 +33,20 @@ export const showDaddy = (dahlia, daddy, setName, setInitialRender) => () => {
         setInitialRender(false);
     }, 2000);
 };
+
+export const showDefault = (dahlia, daddy, setName, setInitialRender) => () => {
+    console.log('Default was clicked');
+    if (dahlia.current) {
+        dahlia.current.style.width = '0px';
+        dahlia.current.style.borderRight = '0px';
+    }
+    if (daddy.current) {
+        daddy.current.style.borderRadius = '50%';
+    }
+    setTimeout(() => {
+        document.body.classList.remove('dahlia');
+        document.body.classList.remove('daddy');
+        setInitialRender(true);
+    }, 2000);
+    setName(null);
+};
