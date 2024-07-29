@@ -106,7 +106,7 @@ const Shows = () => {
 
             return(
                 <li key={item.id}>
-                    <span className="show-title-recent">{show_name}</span><br />
+                    <Link to={`/${name}/${item.id}`}><span className="show-title">{show_name}</span></Link><br />
                     <span className="show-time-recent">{aDate.toLocaleDateString('en-us', dateOptions)}</span>
                 </li>
             )

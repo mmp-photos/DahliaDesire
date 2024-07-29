@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import showsData from '../assets/data/showsData';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Container, Row, Col, Button } from 'reactstrap';
+import convertShowDate from './functions/convertShowDate';
 
 const ShowDetails = ( {name, setName} ) => {
     const params = useParams();
@@ -10,6 +11,7 @@ const ShowDetails = ( {name, setName} ) => {
     const helmetContext = {};
     const helmetTitle = "test";
     const baseUrl = import.meta.env.VITE_BASE_URL;
+    
     useEffect(() => {
         const showDetails = showsData.filter(item => params.showId === item.id);
         setShowInfo(showDetails[0]);
@@ -42,7 +44,18 @@ const ShowDetails = ( {name, setName} ) => {
                     <Col>
                         <h1>{showInfo.name}</h1>
                         <p>{showInfo.about}</p>
-                        <p>Base URL: {baseUrl}</p>
+                        {showInfo.date
+                            ? convertShowDate(showInfo.date)
+                            : null
+                        }
+                        {showInfo.venue
+                            ? <p>{showInfo.venue}</p>
+                            : null
+                        }
+                        {showInfo.description
+                            ? <p>{showInfo.description}</p>
+                            : null
+                        }
 
                     </Col>
                 </Row>

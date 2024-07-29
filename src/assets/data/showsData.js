@@ -104,7 +104,8 @@ const showsData = [
         name: "Frankie's Backyard Burlesque",
         venue: "The Backyard at Downtown Olly's",
         poster: "24072601.jpeg",
-        tickets: "https://www.eventbrite.com/e/frankies-backyard-burlesque-tickets-892176021497?utm_experiment=test_share_listing&aff=ebdsshios"
+        tickets: "https://www.eventbrite.com/e/frankies-backyard-burlesque-tickets-892176021497?utm_experiment=test_share_listing&aff=ebdsshios",
+        description: "A wild night of entertainment awaits you with drag and burlesque performances from Frankie's entourage of performers."
     }
 ];
 
