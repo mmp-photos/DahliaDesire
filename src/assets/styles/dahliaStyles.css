@@ -239,7 +239,8 @@
  }
  .booking{
   width: 450px;
-  padding: 4rem;
+  height: 800px;
+  padding: .25rem;
   margin: auto;
   background-color: var(--background-color);
   border: 9px solid var(--contrasting-color);
