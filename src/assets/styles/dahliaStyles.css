@@ -90,6 +90,21 @@
   opacity: .8;
   text-shadow: 5px 4px 4px black;
  }
+ a:link {
+  text-decoration: none;
+  color: var(--contrasting-color);
+  font-size: 1.2rem;
+ }
+ a:hover {
+  text-decoration: none;
+  color: var(--highlight-color);
+  font-size: 1.2rem;
+ }
+ a:visited {
+  text-decoration: none;
+  color: var(--contrasting-color);
+  font-size: 1.2rem;
+ }
  h1{
     display: block;
     color: var(--text-color);

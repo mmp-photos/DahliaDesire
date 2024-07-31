@@ -9,13 +9,12 @@ const ShowDetails = ( {name, setName} ) => {
     const params = useParams();
     const [ showInfo, setShowInfo ] = useState({});
     const helmetContext = {};
-    const helmetTitle = "test";
+    const helmetTitle = showInfo.name;
     const baseUrl = import.meta.env.VITE_BASE_URL;
     
     useEffect(() => {
         const showDetails = showsData.filter(item => params.showId === item.id);
         setShowInfo(showDetails[0]);
-
     }, [params.showId])
 
     console.log(showInfo)
